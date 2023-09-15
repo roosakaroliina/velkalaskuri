@@ -27,7 +27,7 @@ const Player = ({ createPlayer }) => {
                 />
                 
                 <div>
-                    tunnit:
+                    Peliaika:
                     <input
                         type="number"
                         value={hours}
