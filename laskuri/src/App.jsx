@@ -1,12 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Player from './components/Player'
 import Playerlist from './components/Playerlist'
 import GameInfo from './components/GameInfo'
 import './index.css'
 
 const App = () => {
-  const [players, setPlayers] = useState([])
+  const [players, setPlayers] = useState(
+    JSON.parse(localStorage.getItem('players')) || []
+  )
 
+  useEffect(() => {
+    localStorage.setItem('players', JSON.stringify(players))
+  }, [players])
 
   const addPlayer = (playerObject) => {
     setPlayers(players.concat({ ...playerObject, id: players.length }))
@@ -19,18 +24,43 @@ const App = () => {
 
     }
   }
+  const reset = () => {
+    setPlayers([])
+  }
+  const style = {
+    borderWidth: 1,
+    borderRadius: 4,
+    color: 'black',
+    backgroundColor: 'grey',
+    marginTop: 10
+  }
+  // const mainStyle = {
+  //   padding: 20,
+  //   paddingTop: 4,
+  //   border: 'solid',
+  //   borderWidth: 2,
+  //   marginBottom: 5
+
+  // }
 
   return (
+
     <div>
       <h1>Breikin velkalaskuri</h1>
-      <Player createPlayer={addPlayer} />
-      <ul>
-        {players.map(player =>
-          <Playerlist key={player.id} player={player} removePlayer={removePlayer} />
-        )}
+      <div >
+        <Player createPlayer={addPlayer} />
+        <ul>
+          {players.map(player =>
+            <Playerlist key={player.id} player={player} removePlayer={removePlayer} />
+          )}
 
-      </ul>
-      <GameInfo players={players} />
+        </ul>
+        <GameInfo players={players} />
+      </div>
+      <br />
+      <form onSubmit={reset}>
+        <button style={style} type="submit">aloita alusta</button>
+      </form>
     </div>
   )
 }
