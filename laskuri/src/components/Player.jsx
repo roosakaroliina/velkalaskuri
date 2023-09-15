@@ -33,7 +33,7 @@ const Player = ({ createPlayer }) => {
                         value={hours}
                         id="hours"
                         min={0}
-                        step="0.1"
+                        step="0.01"
                         onChange={event => setHours(event.target.value)}
                         required
                     />
