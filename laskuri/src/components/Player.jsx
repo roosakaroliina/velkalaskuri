@@ -27,12 +27,14 @@ const Player = ({ createPlayer }) => {
                 />
                 
                 <div>
-                    Peliaika:
+                    peliaika:
                     <input
-                        type="number"
+                        type="text"
                         value={hours}
                         id="hours"
-                        step="0.01"
+                        min={0}
+                        step="0.1"
+                        inputmode="numeric"
                         onChange={event => setHours(event.target.value)}
                         required
                     />
