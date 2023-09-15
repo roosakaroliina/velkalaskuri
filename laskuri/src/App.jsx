@@ -31,20 +31,12 @@ const App = () => {
     borderWidth: 1,
     borderRadius: 4,
     color: 'black',
-    backgroundColor: 'grey',
+    backgroundColor: 'lightGrey',
     marginTop: 10
   }
-  // const mainStyle = {
-  //   padding: 20,
-  //   paddingTop: 4,
-  //   border: 'solid',
-  //   borderWidth: 2,
-  //   marginBottom: 5
 
-  // }
 
   return (
-
     <div>
       <h1>Breikin velkalaskuri</h1>
       <div >
@@ -59,7 +51,7 @@ const App = () => {
       </div>
       <br />
       <form onSubmit={reset}>
-        <button style={style} type="submit">aloita alusta</button>
+        <button style={style} type="submit">nollaa</button>
       </form>
     </div>
   )

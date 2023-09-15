@@ -1,11 +1,8 @@
-:root {
+
+body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.25;
   font-weight: 400;
-}
-
-body {
-  color-scheme: normal;
   color: rgba(30, 17, 17, 0.87);
   margin: 15px;
   display: flex;
