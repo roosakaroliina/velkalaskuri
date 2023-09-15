@@ -1,7 +1,7 @@
 const Playerlist = ({player, removePlayer}) => {
     const style = {
-        paddingTop: 4,
-        paddingBottom: 4,
+        paddingTop: 2,
+        paddingBottom: 2,
         paddingLeft: 2,
         paddingRight: 2,
         borderWidth: 1,

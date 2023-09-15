@@ -3,9 +3,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: revert;
+  color-scheme: normal;
   color: rgba(30, 17, 17, 0.87);
-  background-color: #428c42;
+  background-color: #4c994c;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,6 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
 
 body {
   margin: 15px;
@@ -39,7 +40,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #ecd7d7;
+  background-color: #ffffff;
+  color: rgba(30, 17, 17, 0.87);
   transition: border-color 0.25s;
   
 }
@@ -50,7 +52,6 @@ input {
   margin-left: 2px;
   height: 20px;
   width: 80px;
-
 }
 
 

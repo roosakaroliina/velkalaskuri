@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Player from './components/Player'
 import Playerlist from './components/Playerlist'
 import GameInfo from './components/GameInfo'
-import './index.css'
+//import './index.css'
 
 const App = () => {
   const [players, setPlayers] = useState(
