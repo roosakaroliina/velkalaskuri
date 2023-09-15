@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import CountDebt from './CountDebt';
 
 const GameInfo = ({ players }) => {
-  const [currency, setCurrency] = useState('');
-  const [info, setInfo] = useState(null); // Use null instead of an empty array
-  const [showCountDebt, setShowCountDebt] = useState(false); // State to control when to show CountDebt
+  const [cost, setCost] = useState('')
+  const [totalCost, setTotalCost] = useState(null)
+  const [showCountDebt, setShowCountDebt] = useState(false)
 
   const addInfo = (event) => {
-    event.preventDefault();
-    const infoValue = parseFloat(currency);
+    event.preventDefault()
+    const value = parseFloat(cost)
     
-    setInfo(infoValue); // Store the single value, not in an array
-    setCurrency(''); // Clear the input field
-    setShowCountDebt(true); // Show CountDebt component
+    setTotalCost(value)
+    setCost('')
+    setShowCountDebt(true)
   };
 
   return (
@@ -24,16 +24,18 @@ const GameInfo = ({ players }) => {
           hinta yhteensä:
           <input
             type="number"
-            value={currency}
-            id="currency"
+            value={cost}
+            id="cost"
             step="0.01"
-            onChange={(event) => setCurrency(event.target.value)}
+            onChange={(event) => setCost(event.target.value)}
+            required
           />
+          €
         </div>
         <button type="submit">laske velat</button>
       </form>
 
-      {showCountDebt && <CountDebt players={players} info={info} />}
+      {showCountDebt && <CountDebt players={players} totalCost={totalCost} />}
     </div>
   );
 };

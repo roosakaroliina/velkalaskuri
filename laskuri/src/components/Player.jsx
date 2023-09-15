@@ -23,7 +23,9 @@ const Player = ({ createPlayer }) => {
                     value={name}
                     id="name"
                     onChange={event => setName(event.target.value)}
+                    required
                 />
+                
                 <div>
                     tunnit:
                     <input
@@ -32,7 +34,9 @@ const Player = ({ createPlayer }) => {
                         id="hours"
                         step="0.01"
                         onChange={event => setHours(event.target.value)}
+                        required
                     />
+                     tuntia
                 </div>
                 <button type="submit">lisää pelaaja</button>
 

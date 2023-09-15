@@ -1,21 +1,6 @@
+import Count from "./Count"
 
-const Count = ({ a, info, totalHours }) => {
-    const style = {
-        paddingTop: 10,
-        paddingLeft: 2,
-        border: 'solid',
-        borderWidth: 1,
-        marginBottom: 5
-      }
-    const counter = (a.hours / totalHours) * info
-    return (
-        <div style={style}>
-                {a.name} on velkaa {counter.toFixed(2)} €
-        </div>
-    )
-}
-
-const CountDebt = ({ players, info }) => {
+const CountDebt = ({ players, totalCost }) => {
     const initialValue = 0
     const totalHours = players.reduce((accumulator, currentValue) => accumulator + Number(currentValue.hours), initialValue)
     console.log("ajat yhteensä", totalHours)
@@ -23,11 +8,10 @@ const CountDebt = ({ players, info }) => {
 
     return (
         <div>
-            <ul>
-                Hinta {info} € jaettuna jokaiselle pelaajalle heidän peliajan mukaan:
-                {players.map((a) =>
-                    <Count key={a.id} a={a} info={info} totalHours={totalHours} />)}
-            </ul>
+            <br />
+            Hinta {totalCost} € jaettuna jokaiselle pelaajalle heidän peliajan mukaan:
+            {players.map((player) =>
+                <Count key={player.id} player={player} totalCost={totalCost} totalHours={totalHours} />)}
 
         </div>
     )
