@@ -23,12 +23,12 @@ const GameInfo = ({ players }) => {
         <div>
           hinta yhteensä:
           <input
-            type="text"
+            type="number"
             value={cost}
             id="cost"
-            inputmode="numeric"
             step="0.01"
             min={0}
+
             onChange={(event) => setCost(event.target.value)}
             required
           />
